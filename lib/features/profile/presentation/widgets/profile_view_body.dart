@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:linkedin_profile/features/profile/presentation/widgets/about_me_texts.dart';
 import 'package:linkedin_profile/features/profile/presentation/widgets/profile_and_cover.dart';
 
 class ProfileViewBody extends StatelessWidget {
@@ -15,6 +16,8 @@ class ProfileViewBody extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const ProfileAndCover(),
+              const SizedBox(height: 20),
+              const AboutMeTexts(),
             ],
           ),
         ),
