@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:linkedin_profile/features/profile/presentation/widgets/about_me_texts.dart';
+import 'package:linkedin_profile/features/profile/presentation/widgets/desc_about_me.dart';
 import 'package:linkedin_profile/features/profile/presentation/widgets/profile_and_cover.dart';
 
 class ProfileViewBody extends StatelessWidget {
@@ -21,6 +22,10 @@ class ProfileViewBody extends StatelessWidget {
             ],
           ),
         ),
+        SizedBox(
+          height: 10,
+        ),
+        DescAboutMeText()
       ],
     );
   }
