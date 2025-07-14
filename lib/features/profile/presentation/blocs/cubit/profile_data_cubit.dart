@@ -15,7 +15,7 @@ class ProfileDataCubit extends Cubit<ProfileDataState> {
     result.fold(
       (failure) {
         emit(
-          ProfileDataFailure(message: failure.erroreMessage),
+          ProfileDataFailure(message: failure.errorMessage),
         );
       },
       (profiledata) {

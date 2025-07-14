@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:linkedin_profile/features/profile/data/models/profile_model/profile.dart';
 
 class EducationSection extends StatelessWidget {
-  const EducationSection({super.key});
-
+  const EducationSection({super.key, required this.profile});
+  final List<ProfileModel> profile;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -29,8 +30,8 @@ class EducationSection extends StatelessWidget {
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Image.asset(
-                  'assets/images/damietta_university_logo.jpg',
+                Image.network(
+                  profile[0].data!.educations![0].schoolLogoUrl!,
                   height: 70,
                   width: 70,
                 ),
@@ -41,20 +42,20 @@ class EducationSection extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Damietta University',
+                      profile[0].data!.educations![0].school!,
                       style:
                           TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     ),
                     Text(
-                      'بكالوريوس التربيه ',
+                      profile[0].data!.educations![0].degree!,
                       style: TextStyle(fontSize: 16),
                     ),
                     Text(
-                      '2019 - 2023',
+                      profile[0].data!.educations![0].dateRange!,
                       style: TextStyle(color: Colors.grey, fontSize: 16),
                     ),
                     Text(
-                      'Grade: Good',
+                      profile[0].data!.educations![0].activities!,
                       style: TextStyle(fontSize: 18),
                     ),
                   ],

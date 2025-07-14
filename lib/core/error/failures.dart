@@ -1,13 +1,13 @@
 import 'package:dio/dio.dart';
 
 abstract class Failures {
-  final String erroreMessage;
+  final String errorMessage;
 
-  Failures(this.erroreMessage);
+  Failures(this.errorMessage);
 }
 
 class ServerFailure extends Failures {
-  ServerFailure(super.erroreMessage);
+  ServerFailure(super.errorMessage);
 
   factory ServerFailure.fromDioError(DioException dioError) {
     switch (dioError.type) {

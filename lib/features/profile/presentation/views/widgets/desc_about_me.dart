@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:linkedin_profile/features/profile/data/models/profile_model/profile.dart';
 
 class DescAboutMeText extends StatelessWidget {
-  const DescAboutMeText({super.key});
-
+  const DescAboutMeText({super.key, required this.profile});
+  final List<ProfileModel> profile;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -28,7 +29,7 @@ class DescAboutMeText extends StatelessWidget {
               height: 20,
             ),
             Text(
-              'I am a skilled Flutter developer and software engineer with a passion for innovation and problem solving, I create dynamic and user-friendly mobile applications that enhance user experiences and bring ideas to reality.',
+              profile[0].data!.about!,
               style: TextStyle(fontSize: 15.5),
             ),
           ],

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:linkedin_profile/features/profile/data/models/profile_model/profile.dart';
 
 class ProfileAndCover extends StatelessWidget {
-  const ProfileAndCover({super.key});
-
+  const ProfileAndCover({super.key, required this.profileList});
+  final List<ProfileModel> profileList;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -29,7 +30,7 @@ class ProfileAndCover extends StatelessWidget {
                 shape: BoxShape.circle,
                 border: Border.all(color: Color(0xff1B1F23), width: 5),
                 image: DecorationImage(
-                  image: AssetImage('assets/images/linkedin_profile_image.jpg'),
+                  image: NetworkImage(profileList[0].data!.profileImageUrl!),
                   fit: BoxFit.cover,
                 ),
               ),
